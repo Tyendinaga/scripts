@@ -1,0 +1,20 @@
+# Install and setup virtualization software on Fedora
+
+# Cinstal Virtualization Group
+sudo dnf install @virtualization -y
+
+# Edit This File
+sudo vi /etc/libvirt/libvirtd.conf
+
+# Edit these Settings
+unix_sock_group = "libvirt"
+unix_sock_rw_perms = "0770"
+
+# Start and Enable Virtualization
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+
+# Add self to libvirt group
+sudo usermod -a -G libvirt $(whoami)
+
+# Login and Logout
