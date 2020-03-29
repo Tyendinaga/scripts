@@ -6,8 +6,6 @@ sudo yum install nano
 sudo yum install vim
 sudo yum install wget
 
-
-
 #################
 # Cockpit SETUP #
 #################
