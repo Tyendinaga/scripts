@@ -1,0 +1,41 @@
+##########################
+# Install Editors & tools#
+##########################
+
+sudo yum install nano
+sudo yum install vim
+sudo yum install wget
+
+
+
+#################
+# Cockpit SETUP #
+#################
+
+# Setup Cockpit
+sudo yum install cockpit
+
+# Enable and Start Cockpit
+sudo systemctl enable --now cockpit.socket
+
+# Needed for diagnostic reports to work
+sudo yum install sos
+
+# Performance Reporting
+sudo yum install cockpit-pcp
+
+################
+# Domain Setup #
+################
+
+sudo yum install realmd
+
+###################
+# Update Hostname #
+###################
+
+sudo vim /etc/sysconfig/network
+# HOSTNAME=myserver.domain.com
+
+sudo vim /etc/hosts
+

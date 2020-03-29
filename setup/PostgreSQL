@@ -63,8 +63,7 @@ sudo vim /var/lib/pgsql/data/pg_hba.conf
 #   host    all all     ::0/0       scram-sha-256
 
 # Start and Enable postgresql
-sudo systemctl start postgresql
-sudo systemctl enable postgresql
+sudo systemctl enable --now postgresql
 
 #Log into postgres user
 sudo -i -u postgres
@@ -79,4 +78,6 @@ createdb [username from createuser]
 # FIREWALL CONFIGURATION #
 ##########################
 
-firewall-cmd --add-service=postgresql --permanent
+sudo firewall-cmd --add-service=postgresql --permanent
+sudo firewall-cmd --reload
+
